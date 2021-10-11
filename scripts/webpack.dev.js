@@ -17,7 +17,6 @@ module.exports = {
     },
 
     output: {
-        publicPath: 'http://localhost:8080/',
         clean: true,
     },
 
@@ -60,18 +59,5 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
         })
-    ],
-
-    devServer: {
-        historyApiFallback: true,
-        static: [
-            {
-                directory: resolve(__dirname, '..', 'public')
-            },
-            {
-                directory: resolve(__dirname, '..', 'coverage/lcov-report'),
-                publicPath: '/coverage'
-            }
-        ],
-    }
+    ]
 }

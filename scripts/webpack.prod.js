@@ -3,11 +3,12 @@ const { resolve } = require('path')
 // Webpack plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     context: resolve(__dirname, '..'),
 
-    mode: 'development',
+    mode: 'production',
 
     entry: {
         app: [
@@ -17,7 +18,6 @@ module.exports = {
     },
 
     output: {
-        publicPath: 'http://localhost:8080/',
         clean: true,
     },
 
@@ -31,8 +31,8 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
-                    // Creates `style` nodes from JS strings
-                    'style-loader',
+                    // Extract `css` to to file .css
+                    MiniCssExtractPlugin.loader,
                     // Translates CSS into CommonJS
                     'css-loader',
                     // Compiles Sass to CSS
@@ -56,22 +56,10 @@ module.exports = {
             eslintPath: require.resolve('eslint'),
             files: ['./src/**/*.tsx']
         }),
+        new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
         })
-    ],
-
-    devServer: {
-        historyApiFallback: true,
-        static: [
-            {
-                directory: resolve(__dirname, '..', 'public')
-            },
-            {
-                directory: resolve(__dirname, '..', 'coverage/lcov-report'),
-                publicPath: '/coverage'
-            }
-        ],
-    }
+    ]
 }

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10fa1c14-8388-42e0-be84-c233c6ccdf29" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/webpack.common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/webpack.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/webpack.dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/webpack.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/webpack.serv.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/webpack.serv.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +61,7 @@
       <workItem from="1633974567087" duration="44000" />
       <workItem from="1633974629266" duration="1972000" />
       <workItem from="1633987643282" duration="1933000" />
-      <workItem from="1634318854810" duration="1149000" />
+      <workItem from="1634318854810" duration="1992000" />
     </task>
     <servers />
   </component>

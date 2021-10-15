@@ -1,67 +1,9 @@
 const { resolve } = require('path')
+const { merge } = require('webpack-merge')
 
-// Webpack plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
+const webpackDev = require('./webpack.dev')
 
-module.exports = {
-    context: resolve(__dirname, '..'),
-
-    mode: 'development',
-
-    entry: {
-        app: [
-            './src/scss/style.scss',
-            './src/main.tsx',
-        ]
-    },
-
-    output: {
-        publicPath: 'http://localhost:8080/',
-        clean: true,
-    },
-
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
-    },
-
-    module: {
-        rules: [
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [
-                    // Creates `style` nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS
-                    'css-loader',
-                    // Compiles Sass to CSS
-                    'sass-loader',
-                ],
-            },
-            // Process application JS with Babel.
-            // The preset includes JSX, Flow, TypeScript, and some ESnext features.
-            {
-                test: /\.tsx$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-            }
-        ]
-    },
-
-    plugins: [
-        new ESLintPlugin({
-            // Plugin options
-            extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
-            eslintPath: require.resolve('eslint'),
-            files: ['./src/**/*.tsx']
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: 'index.html',
-        })
-    ],
-
+module.exports = merge(webpackDev, {
     devServer: {
         historyApiFallback: true,
         static: [
@@ -71,7 +13,7 @@ module.exports = {
             {
                 directory: resolve(__dirname, '..', 'coverage/lcov-report'),
                 publicPath: '/coverage'
-            }
+            },
         ],
-    }
-}
+    },
+})

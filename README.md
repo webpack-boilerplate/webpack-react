@@ -1,6 +1,6 @@
 # webpack-react
 
-webpack-react
+Boilerplate webpack-react
 
 ## Get-Started
 

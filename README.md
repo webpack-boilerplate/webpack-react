@@ -39,3 +39,17 @@ $ npm run dev
 ```bash
 $ npm run prod
 ```
+
+## Advanced
+
+#### Eslint [Lint]
+
+```bash
+$ npm run lint
+```
+
+#### Jest [Tests Units]
+
+```bash
+$ npm run test
+```

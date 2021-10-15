@@ -53,3 +53,9 @@ $ npm run lint
 ```bash
 $ npm run test
 ```
+
+## References
+
+- [Webpack](https://webpack.js.org)
+- [Babel](https://babeljs.io)
+- [React](https://fr.reactjs.org)
